@@ -1,13 +1,12 @@
 import React from 'react'
-import WorklanceLayout from "src/layouts/WorklanceLayout"
+import SignIn from "../components/SignIn/SignIn"
+import { CenteredLayout } from "src/layouts"
 
-interface Props {
-  readonly children: any
-}
-
-function SignInContainer ({ children }: Props) {
+function SignInContainer () {
   return (
-    <WorklanceLayout title="hello">content: {children}</WorklanceLayout>
+    <CenteredLayout title="Авторизация">
+      <SignIn/>
+    </CenteredLayout>
   )
 }
 

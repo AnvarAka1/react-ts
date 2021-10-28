@@ -1,12 +1,13 @@
-import SignInContainer from './containers/SignInContainer'
-import BlankLayout from 'src/layouts/BlankLayout'
 import * as ROUTES from 'src/constants/routes'
+import { AuthLayout } from "src/layouts"
+
+import SignInContainer from './containers/SignInContainer'
 
 const authRoutes = () => [
   {
-    container: SignInContainer,
-    layout: BlankLayout,
-    route: ROUTES.SIGN_IN_PATH
+    component: SignInContainer,
+    layout: AuthLayout,
+    path: ROUTES.SIGN_IN_PATH,
   }
 ]
 

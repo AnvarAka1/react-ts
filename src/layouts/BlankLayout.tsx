@@ -6,7 +6,7 @@ interface Props {
 
 function BlankLayout ({ children }: Props) {
   return (
-    <>content: {children}</>
+    <>{children}</>
   )
 }
 
