@@ -1,23 +1,26 @@
 import React from 'react'
 import { Form, FormProps } from 'react-final-form'
 
-function withForm (Component: (props: any) => JSX.Element, ComponentProps: any) {
-  return (props: typeof ComponentProps) => {
-    const { initialValues, onSubmit, ...rest } = props
+interface HocProps {
+  readonly initialValues: any,
+  readonly onSubmit: (formValues: FormProps) => void
+}
 
+function withForm<T> (Component: (props: T & { form: FormProps }) => JSX.Element) {
+  return function (props: T & HocProps) {
+    const { initialValues, onSubmit } = props
 
     return (
       <Form initialValues={initialValues} onSubmit={onSubmit}>
-        {(props: FormProps) => (
+        {(formProps: FormProps) => (
           <Component
-            {...rest}
-            form={props}
+            {...props}
+            form={formProps}
           />
         )}
       </Form>
     )
   }
-
 }
 
 export default withForm

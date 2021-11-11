@@ -9,6 +9,7 @@ import Box from "@mui/material/Box"
 import { Checkbox, Link } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import PrimaryButton from "src/components/Buttons/PrimaryButton"
+import withForm from 'src/components/Form/withForm'
 
 function SignUp () {
   return (
@@ -56,4 +57,4 @@ function SignUp () {
   )
 }
 
-export default SignUp
+export default withForm(SignUp)
