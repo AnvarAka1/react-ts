@@ -9,9 +9,12 @@ import Box from "@mui/material/Box"
 import { Checkbox, Link } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import PrimaryButton from "src/components/Buttons/PrimaryButton"
-import withForm from 'src/components/Form/withForm'
+import withForm, {withFormProps} from 'src/components/Form/withForm'
 
-function SignUp () {
+type Props = {} & withFormProps
+
+function SignUp (props: Props) {
+
   return (
     <Card sx={{ width: 400 }}>
       <CardHeader title={<Heading>Регистрация</Heading>}/>
