@@ -1,5 +1,6 @@
 import React from 'react'
 import MuiTextField, { TextFieldProps } from '@mui/material/TextField'
+import FieldWrapper from "src/components/Fields/FieldWrapper"
 
 type Props = {
   readonly name: string
@@ -15,12 +16,18 @@ function TextField (props: Props) {
   } = props
 
   return (
-    <MuiTextField
-      variant={variant}
-      size={size}
-      fullWidth={fullWidth}
-      {...rest}
-    />
+    <FieldWrapper name={name}>
+      {({ input }) => (
+        <MuiTextField
+          variant={variant}
+          size={size}
+          fullWidth={fullWidth}
+          {...rest}
+          value={input.value}
+          onChange={input.onChange}
+        />
+      )}
+    </FieldWrapper>
   )
 }
 
