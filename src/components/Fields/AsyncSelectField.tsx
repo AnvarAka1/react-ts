@@ -8,17 +8,16 @@ interface Props {
   readonly label: string
 }
 
-type OptionType<T> = {
+type OptionType = {
   readonly title: string
   readonly id: number
-  readonly data?: T
 }
 
 const defaultValue = null
 
 function AsyncSelectField ({ name, label }: Props) {
   const [open, setOpen] = useState(false)
-  const [options, setOptions] = useState<OptionType<any>[]>([{ title: 'hello', id: 2 }])
+  const [options, setOptions] = useState<OptionType[]>([{ title: 'hello', id: 2 }])
   const [loading, setLoading] = useState(false)
 
 
@@ -29,12 +28,9 @@ function AsyncSelectField ({ name, label }: Props) {
       setLoading(true)
     }
 
-    console.log('hi');
-
     (async () => {
       try {
-        console.log('hello')
-        const response = await new Promise<OptionType<any>[]>(resolve => {
+        const response = await new Promise<OptionType[]>(resolve => {
           setTimeout(() => {
             resolve([{ id: 1, title: 'Interesting' }])
           }, 2000)
@@ -45,7 +41,8 @@ function AsyncSelectField ({ name, label }: Props) {
           setOptions(response)
           setLoading(false)
         }
-      } catch (err) {
+      } catch (error) {
+        console.warn(error)
       }
 
     })()
@@ -70,11 +67,11 @@ function AsyncSelectField ({ name, label }: Props) {
     setOpen(false)
   }
 
-  const getOptionLabel = (option: OptionType<any>) => {
+  const getOptionLabel = (option: OptionType) => {
     return option.title
   }
 
-  const isOptionEqualToValue = (option: OptionType<any>, value: OptionType<any>) => {
+  const isOptionEqualToValue = (option: OptionType, value: OptionType) => {
     return option.title === value.title
   }
 
@@ -94,7 +91,7 @@ function AsyncSelectField ({ name, label }: Props) {
             isOptionEqualToValue={isOptionEqualToValue}
             getOptionLabel={getOptionLabel}
             onChange={handleChange}
-            value={input.value || defaultValue}
+            value={(input.value || defaultValue) as OptionType}
             options={options}
             loading={loading}
             renderInput={params => (

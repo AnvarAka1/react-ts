@@ -4,7 +4,7 @@ import HtmlLayout from "./HtmlLayout"
 
 interface Props {
   readonly title: string,
-  readonly children: any
+  readonly children: React.ReactNode
 }
 
 function CenteredLayout ({ title, children }: Props) {

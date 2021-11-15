@@ -32,11 +32,11 @@ function SignUpGeneral ({ onNextClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12} lg={6}>
-        <TextField name="Имя" label="Имя"/>
+        <TextField name="firstName" label="Имя"/>
       </Grid>
 
       <Grid item={true} xs={12} lg={6}>
-        <TextField name="Фамилия" label="Фамилия"/>
+        <TextField name="lastName" label="Фамилия"/>
       </Grid>
 
       <Grid item={true} xs={12}>

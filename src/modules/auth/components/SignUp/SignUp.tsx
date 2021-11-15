@@ -4,11 +4,30 @@ import SignUpGeneral from "./SignUpGeneral"
 import SignUpFreelancer from "./SignUpFreelancer"
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-type Props = {} & withFormProps
+
+
+export interface GeneralValues {
+  firstName?: string
+  lastName?: string
+  email?: string
+  password?: string
+  confirmPassword?: string
+  role: string
+  agree?: string
+}
+
+export interface FreelancerValues {
+  stack?: number
+  phone?: string
+  about?: string
+}
+
+export type Values = GeneralValues & FreelancerValues
+
+type Props = withFormProps
 
 const GENERAL = 'general'
 const FREELANCER = 'freelancer'
-
 function SignUp ({ form }: Props) {
   const [step, setStep] = useState(FREELANCER)
   const { handleSubmit } = form

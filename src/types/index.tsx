@@ -1,5 +1,7 @@
+import { ReactNode } from 'react'
+
 export interface RouteType {
-  component: (props: any) => JSX.Element,
-  layout: ({ children }: any) => JSX.Element,
+  component: ReactNode,
+  layout: ReactNode,
   path: string
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 
 interface Props {
-  readonly children: any,
+  readonly children: React.ReactNode,
   readonly title: string | React.ReactNode
 }
 
