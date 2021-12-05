@@ -1,17 +1,18 @@
 import React from 'react'
-import { CenteredLayout } from "src/layouts"
-import SignUp from '../components/SignUp/SignUp'
+import { CenteredLayout } from 'src/layouts'
+import SignUp, {Values} from '../components/SignUp/SignUp'
 import { CLIENT } from 'src/constants/roles'
 
-interface Props {
-}
+function SignUpContainer () {
+  const handleSubmit = (values: Values) => {
+    console.log(values)
+  }
 
-function SignUpContainer (props: Props) {
   return (
     <CenteredLayout title="Регистрация">
       <SignUp
         initialValues={{ role: CLIENT }}
-        onSubmit={() => {}}
+        onSubmit={handleSubmit}
       />
     </CenteredLayout>
   )

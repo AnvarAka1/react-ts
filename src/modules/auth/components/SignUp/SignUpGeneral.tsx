@@ -1,17 +1,17 @@
 import React from 'react'
-import Grid from "@mui/material/Grid"
-import Heading from "src/components/Heading"
-import TextField from "src/components/Fields/TextField"
-import RoleBox from "src/modules/auth/components/SignUp/RoleBox"
-import { CLIENT, FREELANCER } from "src/constants/roles"
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline"
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline"
-import Box from "@mui/material/Box"
-import CheckboxField from "src/components/Fields/CheckboxField"
-import Typography from "@mui/material/Typography"
-import { Link } from "@mui/material"
-import PrimaryButton from "src/components/Buttons/PrimaryButton"
-import { useField } from "react-final-form"
+import Grid from '@mui/material/Grid'
+import Heading from 'src/components/Heading'
+import TextField from 'src/components/Fields/TextField'
+import RoleBox from 'src/modules/auth/components/SignUp/RoleBox'
+import { CLIENT, FREELANCER } from 'src/constants/roles'
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
+import Box from '@mui/material/Box'
+import CheckboxField from 'src/components/Fields/CheckboxField'
+import Typography from '@mui/material/Typography'
+import { Link } from '@mui/material'
+import PrimaryButton from 'src/components/Buttons/PrimaryButton'
+import { useField } from 'react-final-form'
 
 interface Props {
   readonly onNextClick: (event: React.MouseEvent) => void
@@ -32,11 +32,11 @@ function SignUpGeneral ({ onNextClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12} lg={6}>
-        <TextField name="Имя" label="Имя"/>
+        <TextField name="firstName" label="Имя"/>
       </Grid>
 
       <Grid item={true} xs={12} lg={6}>
-        <TextField name="Фамилия" label="Фамилия"/>
+        <TextField name="lastName" label="Фамилия"/>
       </Grid>
 
       <Grid item={true} xs={12}>

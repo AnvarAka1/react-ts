@@ -1,7 +1,7 @@
 import React from 'react'
 import routes from 'src/modules'
 import theme from 'src/theme/theme'
-import ThemeProvider from "@mui/material/styles/ThemeProvider"
+import ThemeProvider from '@mui/material/styles/ThemeProvider'
 import CssBaseline from '@mui/material/CssBaseline'
 import { BrowserRouter } from 'react-router-dom'
 import Routes from '../Routes'

@@ -1,10 +1,10 @@
 import React from 'react'
-import Box from "@mui/material/Box"
-import HtmlLayout from "./HtmlLayout"
+import Box from '@mui/material/Box'
+import HtmlLayout from './HtmlLayout'
 
 interface Props {
   readonly title: string,
-  readonly children: any
+  readonly children: React.ReactNode
 }
 
 function CenteredLayout ({ title, children }: Props) {
@@ -12,7 +12,7 @@ function CenteredLayout ({ title, children }: Props) {
     <HtmlLayout title={title}>
       <Box
         sx={{
-          display: "flex",
+          display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           minHeight: 700,

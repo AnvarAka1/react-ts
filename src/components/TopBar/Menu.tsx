@@ -3,13 +3,12 @@ import MenuItem from '@mui/material/MenuItem'
 import MuiMenu from '@mui/material/Menu'
 
 interface Props {
-  readonly anchorEl: any,
-  readonly menuId: string,
+  readonly anchorEl: Element | ((element: Element) => Element) | null | undefined,
   readonly isMenuOpen: boolean,
   readonly onMenuClose: () => void,
 }
 
-function Menu ({ anchorEl, menuId, isMenuOpen, onMenuClose }: Props) {
+function Menu ({ anchorEl, isMenuOpen, onMenuClose }: Props) {
   return (
     <MuiMenu
       anchorEl={anchorEl}

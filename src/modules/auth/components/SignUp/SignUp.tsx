@@ -1,10 +1,29 @@
 import React, { useState } from 'react'
 import withForm, { withFormProps } from 'src/components/Form/withForm'
-import SignUpGeneral from "./SignUpGeneral"
-import SignUpFreelancer from "./SignUpFreelancer"
+import SignUpGeneral from './SignUpGeneral'
+import SignUpFreelancer from './SignUpFreelancer'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-type Props = {} & withFormProps
+
+export interface GeneralValues {
+  firstName?: string
+  lastName?: string
+  email?: string
+  password?: string
+  confirmPassword?: string
+  role: string
+  agree?: string
+}
+
+export interface FreelancerValues {
+  stack?: number
+  phone?: string
+  about?: string
+}
+
+export type Values = GeneralValues & FreelancerValues
+
+type Props = Record<string, unknown> & withFormProps
 
 const GENERAL = 'general'
 const FREELANCER = 'freelancer'

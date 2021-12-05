@@ -1,9 +1,9 @@
 import React from 'react'
-import HtmlLayout from "./HtmlLayout"
+import HtmlLayout from './HtmlLayout'
 import TopBar from '../components/TopBar'
 
 interface Props {
-  readonly children: any,
+  readonly children: React.ReactNode,
   readonly title: string | React.ReactNode
 }
 

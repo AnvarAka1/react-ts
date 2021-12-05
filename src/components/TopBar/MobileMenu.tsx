@@ -8,10 +8,10 @@ import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 
 interface Props {
-  readonly mobileAnchorEl: any,
-  readonly mobileMenuId: string,
-  readonly isMobileMenuOpen: boolean,
-  readonly onMobileMenuClose: () => void,
+  readonly mobileAnchorEl: Element | ((element: Element) => Element) | null | undefined
+  readonly mobileMenuId: string
+  readonly isMobileMenuOpen: boolean
+  readonly onMobileMenuClose: () => void
   readonly onProfileMenuOpen: (event: React.MouseEvent<HTMLElement>) => void
 }
 

@@ -1,20 +1,17 @@
 import React from 'react'
 import { Form, FormRenderProps } from 'react-final-form'
 
-
-
 export interface withFormProps {
   form: FormRenderProps
 }
 
-interface HocProps {
-  readonly initialValues: any,
-  readonly onSubmit: (formValues: FormRenderProps) => void
+interface HocProps<ArgsType> {
+  readonly initialValues: Record<string, unknown>,
+  readonly onSubmit: (formValues: ArgsType) => void
 }
 
 function withForm<T extends { form: FormRenderProps }> (Component: (props: T) => JSX.Element) {
-
-  return function (props: Omit<T, 'form'> & HocProps) {
+  return function <ArgsType>(props: Omit<T, 'form'> & HocProps<ArgsType>) {
     const { initialValues, onSubmit, ...rest } = props
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface Props {
-  readonly children: any
+  readonly children: React.ReactNode
 }
 
 function AuthLayout ({ children }: Props) {

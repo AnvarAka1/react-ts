@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react'
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
-import styled from "@emotion/styled"
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import styled from '@emotion/styled'
 
 const RoleStyledBox = styled(Box)`
   display: flex;
