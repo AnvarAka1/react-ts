@@ -1,5 +1,5 @@
 import React from 'react'
-import { CenteredLayout } from "src/layouts"
+import { CenteredLayout } from 'src/layouts'
 import SignUp, {Values} from '../components/SignUp/SignUp'
 import { CLIENT } from 'src/constants/roles'
 

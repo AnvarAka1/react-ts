@@ -1,5 +1,5 @@
 import React from 'react'
-import Typography, { TypographyProps } from "@mui/material/Typography"
+import Typography, { TypographyProps } from '@mui/material/Typography'
 
 type Props = {
   readonly children: string
@@ -8,7 +8,7 @@ type Props = {
 function Heading ({ children, ...props }: Props) {
   return (
     <Typography
-      variant={"h6"}
+      variant={'h6'}
       {...props}
     >
       {children}

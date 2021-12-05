@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react'
-import Autocomplete from "@mui/material/Autocomplete"
-import { CircularProgress, TextField } from "@mui/material"
-import FieldWrapper from "src/components/Fields/FieldWrapper"
+import Autocomplete from '@mui/material/Autocomplete'
+import { CircularProgress, TextField } from '@mui/material'
+import FieldWrapper from 'src/components/Fields/FieldWrapper'
 
 interface Props {
   readonly name: string
@@ -102,7 +102,7 @@ function AsyncSelectField ({ name, label }: Props) {
                   ...params.InputProps,
                   endAdornment: (
                     <>
-                      {loading ? <CircularProgress color={"inherit"} size={20}/> : null}
+                      {loading ? <CircularProgress color={'inherit'} size={20}/> : null}
                       {params.InputProps.endAdornment}
                     </>
                   )

@@ -1,5 +1,5 @@
 import * as ROUTES from 'src/constants/routes'
-import { AuthLayout } from "src/layouts"
+import { AuthLayout } from 'src/layouts'
 
 import SignInContainer from './containers/SignInContainer'
 import SignUpContainer from './containers/SignUpContainer'

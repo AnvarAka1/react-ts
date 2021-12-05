@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import withForm, { withFormProps } from 'src/components/Form/withForm'
-import SignUpGeneral from "./SignUpGeneral"
-import SignUpFreelancer from "./SignUpFreelancer"
+import SignUpGeneral from './SignUpGeneral'
+import SignUpFreelancer from './SignUpFreelancer'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 
