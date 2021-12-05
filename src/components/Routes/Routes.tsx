@@ -3,8 +3,9 @@ import { Route, Switch } from "react-router-dom"
 import { RouteType } from 'src/types'
 
 interface Props {
-  routes: RouteType[]
+  readonly routes: RouteType[]
 }
+
 
 function Routes ({ routes }: Props) {
   return (

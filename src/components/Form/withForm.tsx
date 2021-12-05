@@ -5,13 +5,13 @@ export interface withFormProps {
   form: FormRenderProps
 }
 
-interface HocProps {
+interface HocProps<ArgsType> {
   readonly initialValues: Record<string, unknown>,
-  readonly onSubmit: (formValues: Record<string, any>) => void
+  readonly onSubmit: (formValues: ArgsType) => void
 }
 
 function withForm<T extends { form: FormRenderProps }> (Component: (props: T) => JSX.Element) {
-  return function (props: Omit<T, 'form'> & HocProps) {
+  return function <ArgsType>(props: Omit<T, 'form'> & HocProps<ArgsType>) {
     const { initialValues, onSubmit, ...rest } = props
 
     return (

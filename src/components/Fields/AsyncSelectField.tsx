@@ -79,7 +79,7 @@ function AsyncSelectField ({ name, label }: Props) {
   return (
     <FieldWrapper name={name}>
       {({ input }) => {
-        const handleChange = (event: SyntheticEvent<Element, Event>, newValue: object | null) => {
+        const handleChange = (event: SyntheticEvent<Element, Event>, newValue: Record<string, unknown> | null) => {
           input.onChange(newValue)
         }
 

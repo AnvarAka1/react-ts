@@ -164,7 +164,6 @@ function TopBar () {
         onProfileMenuOpen={handleProfileMenuOpen}
       />
       <Menu
-        menuId={menuId}
         isMenuOpen={isMenuOpen}
         anchorEl={anchorEl}
         onMenuClose={handleMenuClose}
