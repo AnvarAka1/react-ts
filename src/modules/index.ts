@@ -1,7 +1,11 @@
 import authRoutes from './auth'
+import clientRoutes from './client'
+import freelancerRoutes from './freelancer'
 
 const rootRoutes = () => [
-  ...authRoutes()
+  ...authRoutes(),
+  ...clientRoutes(),
+  ...freelancerRoutes()
 ]
 
 export default rootRoutes
