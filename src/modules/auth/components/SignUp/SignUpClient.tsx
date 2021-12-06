@@ -5,13 +5,12 @@ import TextField from 'src/components/Fields/TextField'
 import PrimaryButton from 'src/components/Buttons/PrimaryButton'
 import Button from '@mui/material/Button'
 import AsyncSelectField from 'src/components/Fields/AsyncSelectField'
-import AsyncMultiSelectField from 'src/components/Fields/AsyncMultiSelectField'
 
 interface Props {
   readonly onPrevClick: (event: React.MouseEvent) => void
 }
 
-function SignUpFreelancer ({ onPrevClick }: Props) {
+function SignUpClient ({ onPrevClick }: Props) {
   return (
     <Grid container={true} spacing={2}>
       <Grid item={true} xs={12}>
@@ -19,15 +18,15 @@ function SignUpFreelancer ({ onPrevClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12}>
-        <AsyncSelectField name="stack" label="Выберите стек" />
+        <TextField name="companyName" label="Название компании" />
+      </Grid>
+
+      <Grid item={true} xs={12}>
+        <AsyncSelectField name="position" label="Выберите должность" />
       </Grid>
 
       <Grid item={true} xs={12}>
         <TextField name="phone" label="Номер телефона" />
-      </Grid>
-
-      <Grid item={true} xs={12}>
-        <AsyncMultiSelectField name="skills" label="Навыки" />
       </Grid>
 
       <Grid item={true} xs={12}>
@@ -52,4 +51,4 @@ function SignUpFreelancer ({ onPrevClick }: Props) {
   )
 }
 
-export default SignUpFreelancer
+export default SignUpClient

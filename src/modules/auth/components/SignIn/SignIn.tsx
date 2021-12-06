@@ -9,14 +9,14 @@ import TextField from 'src/components/Fields/TextField'
 function SignIn () {
   return (
     <Card sx={{ width: 400 }}>
-      <CardHeader title={<Heading>Авторизация</Heading>}/>
+      <CardHeader title={<Heading>Авторизация</Heading>} />
       <CardContent>
         <Grid container={true} spacing={3}>
           <Grid item={true} xs={12}>
-            <TextField name="email" label="Эл. почта"/>
+            <TextField name="email" label="Эл. почта" />
           </Grid>
           <Grid item={true} xs={12}>
-            <TextField name="password" type="password" label="Пароль"/>
+            <TextField name="password" type="password" label="Пароль" />
           </Grid>
 
         </Grid>

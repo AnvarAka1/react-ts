@@ -16,7 +16,7 @@ function HtmlLayout (props: Props) {
     <>
       <Helmet>
         <title>{title}</title>
-        <meta name="description" content="Worklance on TypeScript"/>
+        <meta name="description" content="Worklance on TypeScript" />
       </Helmet>
       {children}
     </>

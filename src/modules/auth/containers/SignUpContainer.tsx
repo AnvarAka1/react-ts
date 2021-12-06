@@ -5,7 +5,7 @@ import { CLIENT } from 'src/constants/roles'
 
 function SignUpContainer () {
   const handleSubmit = (values: Values) => {
-    console.log(values)
+    localStorage.setItem('auth', JSON.stringify(values))
   }
 
   return (

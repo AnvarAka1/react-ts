@@ -5,7 +5,7 @@ import { CenteredLayout } from 'src/layouts'
 function SignInContainer () {
   return (
     <CenteredLayout title="Авторизация">
-      <SignIn/>
+      <SignIn />
     </CenteredLayout>
   )
 }

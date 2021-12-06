@@ -11,7 +11,7 @@ interface HocProps<ArgsType> {
 }
 
 function withForm<T extends { form: FormRenderProps }> (Component: (props: T) => JSX.Element) {
-  return function <ArgsType>(props: Omit<T, 'form'> & HocProps<ArgsType>) {
+  function FormComponent <ArgsType> (props: Omit<T, 'form'> & HocProps<ArgsType>) {
     const { initialValues, onSubmit, ...rest } = props
 
     return (
@@ -25,6 +25,8 @@ function withForm<T extends { form: FormRenderProps }> (Component: (props: T) =>
       </Form>
     )
   }
+
+  return FormComponent
 }
 
 export default withForm

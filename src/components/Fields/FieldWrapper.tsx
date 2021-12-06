@@ -5,12 +5,13 @@ type ValueType = string | number | null | undefined | Record<string, unknown>
 
 export interface FieldWrapperProps {
   readonly name: string
+  readonly type?: string
   readonly children: (props: FieldRenderProps<ValueType>) => React.ReactNode
 }
 
-function FieldWrapper ({ name, children }: FieldWrapperProps) {
+function FieldWrapper ({ name, type, children }: FieldWrapperProps) {
   return (
-    <Field name={name}>
+    <Field name={name} type={type}>
       {fieldProps => (
         <>{children(fieldProps)}</>
       )}

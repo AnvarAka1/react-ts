@@ -95,11 +95,11 @@ function TopBar () {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon/>
+            <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
-            noWrap
+            noWrap={true}
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
@@ -107,18 +107,18 @@ function TopBar () {
           </Typography>
           <Search>
             <SearchIconWrapper>
-              <SearchIcon/>
+              <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Box sx={{ flexGrow: 1 }}/>
+          <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
-                <MailIcon/>
+                <MailIcon />
               </Badge>
             </IconButton>
             <IconButton
@@ -127,7 +127,7 @@ function TopBar () {
               color="inherit"
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon/>
+                <NotificationsIcon />
               </Badge>
             </IconButton>
             <IconButton
@@ -139,7 +139,7 @@ function TopBar () {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle/>
+              <AccountCircle />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -151,7 +151,7 @@ function TopBar () {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon/>
+              <MoreIcon />
             </IconButton>
           </Box>
         </Toolbar>

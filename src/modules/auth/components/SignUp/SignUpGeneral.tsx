@@ -14,7 +14,7 @@ import PrimaryButton from 'src/components/Buttons/PrimaryButton'
 import { useField } from 'react-final-form'
 
 interface Props {
-  readonly onNextClick: (event: React.MouseEvent) => void
+  readonly onNextClick: (role: string) => void
 }
 
 function SignUpGeneral ({ onNextClick }: Props) {
@@ -25,6 +25,7 @@ function SignUpGeneral ({ onNextClick }: Props) {
     roleField.input.onChange(newRole)
   }
 
+
   return (
     <Grid container={true} spacing={2}>
       <Grid item={true} xs={12}>
@@ -32,29 +33,44 @@ function SignUpGeneral ({ onNextClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12} lg={6}>
-        <TextField name="firstName" label="Имя"/>
+        <TextField name="firstName" label="Имя" />
       </Grid>
 
       <Grid item={true} xs={12} lg={6}>
-        <TextField name="lastName" label="Фамилия"/>
+        <TextField name="lastName" label="Фамилия" />
       </Grid>
 
       <Grid item={true} xs={12}>
-        <TextField name="email" label="Эл. почта" type="email"/>
+        <TextField
+          name="email"
+          label="Эл. почта"
+          type="email"
+          autoComplete="username"
+        />
       </Grid>
 
       <Grid item={true} xs={12}>
-        <TextField name="password" type="password" label="Пароль"/>
+        <TextField
+          name="password"
+          type="password"
+          label="Пароль"
+          autoComplete="password"
+        />
       </Grid>
 
       <Grid item={true} xs={12}>
-        <TextField name="confirmPassword" type="password" label="Повторите пароль"/>
+        <TextField
+          name="confirmPassword"
+          type="password"
+          label="Повторите пароль"
+          autoComplete="new-password"
+        />
       </Grid>
 
       <Grid item={true} xs={6}>
         <RoleBox
           active={role === CLIENT}
-          icon={<WorkOutlineIcon/>}
+          icon={<WorkOutlineIcon />}
           title="Client"
           onClick={() => handleRoleClick(CLIENT)}
         />
@@ -62,7 +78,7 @@ function SignUpGeneral ({ onNextClick }: Props) {
       <Grid item={true} xs={6}>
         <RoleBox
           active={role === FREELANCER}
-          icon={<PersonOutlineIcon/>}
+          icon={<PersonOutlineIcon />}
           title="Freelancer"
           onClick={() => handleRoleClick(FREELANCER)}
         />
@@ -83,7 +99,7 @@ function SignUpGeneral ({ onNextClick }: Props) {
 
       <Grid item={true} xs={12}>
         <PrimaryButton
-          onClick={onNextClick}
+          onClick={() => onNextClick(role)}
           fullWidth={true}
         >
           Далее

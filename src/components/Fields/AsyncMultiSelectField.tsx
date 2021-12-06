@@ -1,6 +1,5 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react'
-import Autocomplete from '@mui/material/Autocomplete'
-import { CircularProgress, TextField } from '@mui/material'
+import { Autocomplete, CircularProgress, TextField } from '@mui/material'
 import FieldWrapper from 'src/components/Fields/FieldWrapper'
 
 interface Props {
@@ -11,16 +10,16 @@ interface Props {
 type OptionType = {
   readonly title: string
   readonly id: number
-}
+} & Record<string, unknown>
 
-const defaultValue = null
+const defaultValue: OptionType[] = []
 
 const testResponse = [
   { id: 1, title: 'Interesting' },
   { id: 2, title: 'Very good' }
 ]
 
-function AsyncSelectField ({ name, label }: Props) {
+function AsyncMultiSelectField ({ name, label }: Props) {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [options, setOptions] = useState<OptionType[]>([])
@@ -30,7 +29,6 @@ function AsyncSelectField ({ name, label }: Props) {
     let active = true
 
     if (open) {
-
       (async () => {
         try {
           setLoading(true)
@@ -39,7 +37,6 @@ function AsyncSelectField ({ name, label }: Props) {
               resolve(testResponse)
             }, 2000)
           })
-
 
           if (active) {
             setOptions(response)
@@ -55,19 +52,11 @@ function AsyncSelectField ({ name, label }: Props) {
     }
   }, [open, value])
 
-  useEffect(() => {
-    if (!open) {
-      setOptions([])
-    }
-  }, [open])
-
-
   const handleOpen = () => {
     setOpen(true)
   }
 
   const handleClose = () => {
-    setOptions([])
     setOpen(false)
   }
 
@@ -75,30 +64,25 @@ function AsyncSelectField ({ name, label }: Props) {
     return option.title
   }
 
-  const isOptionEqualToValue = (option: OptionType, value: OptionType) => {
-    return option.title === value.title
-  }
-
   return (
     <FieldWrapper name={name}>
       {({ input }) => {
-        const handleChange = (event: SyntheticEvent<Element, Event>, newValue: Record<string, unknown> | null) => {
+        const handleChange = (event: SyntheticEvent<Element, Event>, newValue: OptionType[]) => {
           input.onChange(newValue)
         }
 
         return (
           <Autocomplete
-            open={open}
+            multiple={true}
+            options={options}
             onOpen={handleOpen}
             onClose={handleClose}
-            isOptionEqualToValue={isOptionEqualToValue}
-            getOptionLabel={getOptionLabel}
             onChange={handleChange}
             onInputChange={(event, value) => setValue(value)}
-            value={(input.value || defaultValue) as OptionType}
-            options={options}
+            getOptionLabel={getOptionLabel}
             loading={loading}
-            renderInput={params => (
+            value={(input.value || defaultValue) as unknown as OptionType[]}
+            renderInput={(params) => (
               <TextField
                 {...params}
                 label={label}
@@ -111,17 +95,13 @@ function AsyncSelectField ({ name, label }: Props) {
                     </>
                   )
                 }}
-
               />
-            )
-            }
+            )}
           />
         )
-
-      }
-      }
+      }}
     </FieldWrapper>
   )
 }
 
-export default AsyncSelectField
+export default AsyncMultiSelectField

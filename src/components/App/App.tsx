@@ -10,10 +10,10 @@ import { HelmetProvider } from 'react-helmet-async'
 function App () {
   return (
     <BrowserRouter>
-      <CssBaseline/>
+      <CssBaseline />
       <HelmetProvider>
         <ThemeProvider theme={theme}>
-          <Routes routes={routes()}/>
+          <Routes routes={routes()} />
         </ThemeProvider>
       </HelmetProvider>
     </BrowserRouter>

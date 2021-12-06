@@ -31,7 +31,7 @@ function MobileMenu (props: Props) {
         horizontal: 'right',
       }}
       id={mobileMenuId}
-      keepMounted
+      keepMounted={true}
       transformOrigin={{
         vertical: 'top',
         horizontal: 'right',
@@ -42,7 +42,7 @@ function MobileMenu (props: Props) {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon/>
+            <MailIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -54,7 +54,7 @@ function MobileMenu (props: Props) {
           color="inherit"
         >
           <Badge badgeContent={17} color="error">
-            <NotificationsIcon/>
+            <NotificationsIcon />
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -67,7 +67,7 @@ function MobileMenu (props: Props) {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle/>
+          <AccountCircle />
         </IconButton>
         <p>Profile</p>
       </MenuItem>
