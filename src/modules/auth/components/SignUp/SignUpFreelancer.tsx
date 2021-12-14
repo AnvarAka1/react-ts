@@ -1,9 +1,10 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
+
 import Heading from 'src/components/Heading'
 import TextField from 'src/components/Fields/TextField'
 import PrimaryButton from 'src/components/Buttons/PrimaryButton'
-import Button from '@mui/material/Button'
 import AsyncSelectField from 'src/components/Fields/AsyncSelectField'
 import AsyncMultiSelectField from 'src/components/Fields/AsyncMultiSelectField'
 
@@ -15,7 +16,7 @@ function SignUpFreelancer ({ onPrevClick }: Props) {
   return (
     <Grid container={true} spacing={2}>
       <Grid item={true} xs={12}>
-        <Heading>Завершите регистрацию</Heading>
+        <Heading gutterBottom={false}>Завершите регистрацию</Heading>
       </Grid>
 
       <Grid item={true} xs={12}>

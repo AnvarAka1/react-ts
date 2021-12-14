@@ -1,11 +1,12 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
+
 import { RouteType } from 'src/types'
+import * as ROUTES from 'src/constants/routes'
 
 interface Props {
   readonly routes: RouteType[]
 }
-
 
 function Routes ({ routes }: Props) {
   return (
@@ -22,6 +23,7 @@ function Routes ({ routes }: Props) {
           )}
         />
       ))}
+      <Redirect to={ROUTES.FREELANCER_LIST} />
     </Switch>
   )
 }

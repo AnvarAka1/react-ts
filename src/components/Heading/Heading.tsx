@@ -9,6 +9,7 @@ function Heading ({ children, ...props }: Props) {
   return (
     <Typography
       variant={'h6'}
+      gutterBottom={true}
       {...props}
     >
       {children}

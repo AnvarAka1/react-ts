@@ -1,12 +1,12 @@
 import React from 'react'
-import FieldWrapper from 'src/components/Fields/FieldWrapper'
 import FormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
+
+import FieldWrapper from 'src/components/Fields/FieldWrapper'
 
 type Props = {
   readonly name: string
 } & Omit<FormControlLabelProps, 'control'>
-
 
 function CheckboxField ({ name, label }: Props) {
   return (

@@ -1,9 +1,11 @@
 import React from 'react'
-import FreelancerList from '../components/FreelancerList'
-import WorklanceLayout from 'src/layouts/WorklanceLayout'
-import {freelancerList} from 'src/mock/freelancer'
-function FreelancerListContainer () {
 
+import WorklanceLayout from 'src/layouts/WorklanceLayout'
+import { freelancerList } from 'src/mock/freelancer'
+
+import FreelancerList from '../components/FreelancerList'
+
+function FreelancerListContainer () {
   const mockList = { isLoading: false, results: freelancerList }
 
   return (

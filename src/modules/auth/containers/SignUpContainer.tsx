@@ -1,7 +1,9 @@
 import React from 'react'
+
 import { CenteredLayout } from 'src/layouts'
-import SignUp, {Values} from '../components/SignUp/SignUp'
 import { CLIENT } from 'src/constants/roles'
+
+import SignUp, { Values } from '../components/SignUp/SignUp'
 
 function SignUpContainer () {
   const handleSubmit = (values: Values) => {

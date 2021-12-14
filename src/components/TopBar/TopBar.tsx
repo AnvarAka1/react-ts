@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -11,10 +11,11 @@ import AccountCircle from '@mui/icons-material/AccountCircle'
 import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import MoreIcon from '@mui/icons-material/MoreVert'
-import Menu from './Menu'
-import MobileMenu from './MobileMenu'
 import InputBase from '@mui/material/InputBase'
 import { alpha, styled } from '@mui/material/styles'
+
+import Menu from './Menu'
+import MobileMenu from './MobileMenu'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -57,9 +58,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 
 function TopBar () {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    React.useState<null | HTMLElement>(null)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null)
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)

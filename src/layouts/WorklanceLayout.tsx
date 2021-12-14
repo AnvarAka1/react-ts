@@ -1,5 +1,7 @@
 import React from 'react'
+
 import HtmlLayout from './HtmlLayout'
+
 import TopBar from '../components/TopBar'
 
 interface Props {

@@ -10,4 +10,3 @@ export default () => [
     path: ROUTES.FREELANCER_LIST,
   }
 ]
-

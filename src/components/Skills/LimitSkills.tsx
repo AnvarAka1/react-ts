@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
-import { Skill } from 'src/types'
-import Skills from './Skills'
 import { slice } from 'ramda'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 
+import { SkillType } from 'src/types'
+
+import Skills from './Skills'
+
 type Props = {
-  skills: Skill[]
+  skills: SkillType[]
   showCount?: number
 }
 
 function LimitSkills (props: Props) {
   const {
     skills,
-    showCount = 1
+    showCount = 3
   } = props
 
   const [show, setShow] = useState(false)

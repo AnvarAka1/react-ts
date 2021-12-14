@@ -1,6 +1,8 @@
 import React from 'react'
-import SignIn from '../components/SignIn/SignIn'
+
 import { CenteredLayout } from 'src/layouts'
+
+import SignIn from '../components/SignIn/SignIn'
 
 function SignInContainer () {
   return (

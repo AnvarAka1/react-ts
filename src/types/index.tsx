@@ -6,12 +6,7 @@ export interface RouteType {
   path: string
 }
 
-export type Stack = {
-  readonly id: number
-  readonly name: string
-}
-
-export type User = {
+export type UserType = {
   readonly id: number
   readonly role: string
   readonly email: string
@@ -23,28 +18,38 @@ export type User = {
   readonly description: string
 }
 
-export type Freelancer = {
+export type FreelancerType = {
   readonly id: number
-  readonly stack: Stack
-  readonly skills: Skill[]
+  readonly stack: StackType
+  readonly skills: SkillType[]
   readonly userId: number
-} & Omit<User, 'id'>
+} & Omit<UserType, 'id'>
 
-export type Client = {
+export type ClientType = {
   readonly id: number
   readonly companyName: string
-  readonly position: Position
+  readonly position: PositionType
 
-} & Omit<User, 'id'>
+} & Omit<UserType, 'id'>
 
-export type Skill = {
+export type StackType = {
   readonly id: number
   readonly name: string
 }
 
-
-export type Position = {
+export type SkillType = {
   readonly id: number
   readonly name: string
 }
 
+export type PositionType = {
+  readonly id: number
+  readonly name: string
+}
+
+export type CategoryType = {
+  readonly id: number
+  readonly name: string
+  readonly imagePath: string
+  readonly count: number
+}

@@ -1,6 +1,6 @@
-import { Freelancer } from 'src/types'
+import { FreelancerType } from 'src/types'
 
-export const freelancerList: Freelancer[] = [
+export const freelancerList: FreelancerType[] = [
   {
     id: 1,
     firstName: 'Ольга',

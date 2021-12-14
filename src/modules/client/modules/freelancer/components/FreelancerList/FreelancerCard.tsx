@@ -1,17 +1,18 @@
 import React from 'react'
-import { Freelancer } from 'src/types'
-import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Box from '@mui/material/Box'
-import Avatar from 'src/components/Avatar'
 import Typography from '@mui/material/Typography'
+import { generatePath } from 'react-router-dom'
+
+import { FreelancerType } from 'src/types'
+import HoverCard from 'src/components/Cards'
+import Avatar from 'src/components/Avatar'
 import LimitSkills from 'src/components/Skills/LimitSkills'
-import { generatePath, Link as RouterLink } from 'react-router-dom'
-import Link from '@mui/material/Link'
+import RouterLink from 'src/components/RouterLink'
 import * as ROUTES from 'src/constants/routes'
 
 type Props = {
-  freelancer: Freelancer
+  freelancer: FreelancerType
 }
 
 function FreelancerCard ({ freelancer }: Props) {
@@ -27,23 +28,23 @@ function FreelancerCard ({ freelancer }: Props) {
   const path = generatePath(ROUTES.FREELANCER_DETAIL, { id })
 
   return (
-    <Card>
+    <HoverCard>
       <CardContent>
         <Box display={'flex'}>
-          <Link to={path} component={RouterLink}>
+          <RouterLink to={path}>
             <Avatar src={avatar} alt={fullName} />
-          </Link>
-          <Box>
+          </RouterLink>
+          <Box ml={2}>
             <Box mb={2}>
-              <Link to={path} component={RouterLink}>
+              <RouterLink to={path}>
                 <Typography>{fullName}</Typography>
                 <Typography variant={'subtitle2'}>{stack.name}</Typography>
-              </Link>
+              </RouterLink>
             </Box>
             <Box mb={1}>
-              <Link to={path} component={RouterLink}>
-                <Typography>{description}</Typography>
-              </Link>
+              <RouterLink to={path}>
+                <Typography variant={'subtitle2'} color={'inherit'}>{description}</Typography>
+              </RouterLink>
             </Box>
             <Box>
               <LimitSkills skills={skills} />
@@ -52,7 +53,7 @@ function FreelancerCard ({ freelancer }: Props) {
         </Box>
 
       </CardContent>
-    </Card>
+    </HoverCard>
   )
 }
 

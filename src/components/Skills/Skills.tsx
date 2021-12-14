@@ -1,9 +1,10 @@
 import React from 'react'
-import { Skill } from 'src/types'
 import { Chip } from '@mui/material'
 
+import { SkillType } from 'src/types'
+
 type Props = {
-  skills: Skill[]
+  skills: SkillType[]
 }
 
 function Skills ({ skills }: Props) {
@@ -13,8 +14,10 @@ function Skills ({ skills }: Props) {
         <Chip
           key={skill.id}
           label={skill.name}
+          size={'small'}
           color="primary"
           variant="outlined"
+          sx={{ mr: 1 }}
         />
       ))}
     </>

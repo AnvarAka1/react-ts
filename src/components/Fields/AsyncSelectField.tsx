@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react'
 import Autocomplete from '@mui/material/Autocomplete'
 import { CircularProgress, TextField } from '@mui/material'
+
 import FieldWrapper from 'src/components/Fields/FieldWrapper'
 
 interface Props {
@@ -30,7 +31,6 @@ function AsyncSelectField ({ name, label }: Props) {
     let active = true
 
     if (open) {
-
       (async () => {
         try {
           setLoading(true)
@@ -39,7 +39,6 @@ function AsyncSelectField ({ name, label }: Props) {
               resolve(testResponse)
             }, 2000)
           })
-
 
           if (active) {
             setOptions(response)
@@ -60,7 +59,6 @@ function AsyncSelectField ({ name, label }: Props) {
       setOptions([])
     }
   }, [open])
-
 
   const handleOpen = () => {
     setOpen(true)
@@ -117,7 +115,6 @@ function AsyncSelectField ({ name, label }: Props) {
             }
           />
         )
-
       }
       }
     </FieldWrapper>
