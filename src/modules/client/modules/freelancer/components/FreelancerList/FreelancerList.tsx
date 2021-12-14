@@ -1,10 +1,16 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
+import Box from '@mui/material/Box'
+import { useHistory } from 'react-router-dom'
 
 import { categoryList } from 'src/mock/categories'
 import PageContainer from 'src/components/PageContainer'
 import Heading from 'src/components/Heading'
 import { FreelancerType } from 'src/types'
+import * as ROUTES from 'src/constants/routes'
+import MyProjects from 'src/components/MyProjects/MyProjects'
+import { projectList } from 'src/mock/project'
 
 import FreelancerCard from './FreelancerCard'
 import FreelancerCategories from './FreelancerCategories'
@@ -17,6 +23,8 @@ type Props = {
 }
 
 function FreelancerList ({ list }: Props) {
+  const history = useHistory()
+
   return (
     <PageContainer>
       <Grid container={true} spacing={3}>
@@ -37,6 +45,20 @@ function FreelancerList ({ list }: Props) {
         </Grid>
         <Grid item={true} lg={3}>
           <Heading>Мои проекты</Heading>
+          <Box>
+            <Button
+              type={'button'}
+              variant={'outlined'}
+              color={'primary'}
+              fullWidth={true}
+              onClick={() => history.push(ROUTES.PROJECT_CREATE)}
+            >
+              + Создать проект
+            </Button>
+            <Box sx={{ mt: 3 }}>
+              <MyProjects projects={projectList} />
+            </Box>
+          </Box>
         </Grid>
       </Grid>
     </PageContainer>

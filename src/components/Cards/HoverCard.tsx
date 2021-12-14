@@ -11,9 +11,9 @@ const Card = styled(MuiCard)`
 
 type Props = CardProps
 
-function HoverCard ({ children }: Props) {
+function HoverCard ({ children, ...props }: Props) {
   return (
-    <Card>
+    <Card {...props}>
       {children}
     </Card>
   )

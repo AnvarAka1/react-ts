@@ -29,8 +29,14 @@ export type ClientType = {
   readonly id: number
   readonly companyName: string
   readonly position: PositionType
-
 } & Omit<UserType, 'id'>
+
+export type ProjectType = {
+  readonly id: number
+  readonly name: string
+  readonly status: string
+  readonly freelancers: FreelancerType[] | null
+}
 
 export type StackType = {
   readonly id: number
