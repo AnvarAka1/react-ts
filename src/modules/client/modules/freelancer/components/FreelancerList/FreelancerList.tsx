@@ -28,11 +28,11 @@ function FreelancerList ({ list }: Props) {
   return (
     <PageContainer>
       <Grid container={true} spacing={3}>
-        <Grid item={true} lg={3}>
+        <Grid item={true} xs={12} lg={3}>
           <Heading>Категории</Heading>
           <FreelancerCategories categories={categoryList} />
         </Grid>
-        <Grid item={true} lg={6}>
+        <Grid item={true} xs={12} lg={6}>
           <Heading>Исполнители</Heading>
           <Grid container={true} spacing={2}>
             {list.results.map(freelancer => (
@@ -43,7 +43,7 @@ function FreelancerList ({ list }: Props) {
           </Grid>
 
         </Grid>
-        <Grid item={true} lg={3}>
+        <Grid item={true} xs={12} lg={3}>
           <Heading>Мои проекты</Heading>
           <Box>
             <Button

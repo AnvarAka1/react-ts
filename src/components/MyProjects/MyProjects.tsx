@@ -28,7 +28,11 @@ function MyProjects ({ projects }: Props) {
         const path = generatePath(ROUTES.PROJECT_DETAIL, { id: project.id })
 
         return (
-          <MyProject key={project.id} project={project} path={path} />
+          <MyProject
+            key={project.id}
+            project={project}
+            path={path}
+          />
         )
       })}
     </Box>

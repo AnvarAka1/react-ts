@@ -8,7 +8,7 @@ type Props = {
 
 function PageContainer ({ children }: Props) {
   return (
-    <Container sx={{ pt: 5, pb: 5 }}>
+    <Container maxWidth={'xl'} sx={{ pt: 5, pb: 5 }}>
       <Grid container={true}>
         <Grid item={true} xs={12}>
           {children}

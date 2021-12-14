@@ -31,10 +31,12 @@ export type ClientType = {
   readonly position: PositionType
 } & Omit<UserType, 'id'>
 
+export type ProjectStatusType = 'failed' | 'inProgress' | 'completed'
+
 export type ProjectType = {
   readonly id: number
   readonly name: string
-  readonly status: string
+  readonly status: ProjectStatusType
   readonly freelancers: FreelancerType[] | null
 }
 
