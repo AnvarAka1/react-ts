@@ -6,7 +6,7 @@ import { freelancerList } from 'src/mock/freelancer'
 import FreelancerList from '../components/FreelancerList'
 
 function FreelancerListContainer () {
-  const mockList = { isLoading: false, results: freelancerList }
+  const mockList = { isLoading: false, results: freelancerList, count: 6 }
 
   return (
     <WorklanceLayout title="Freelancers">

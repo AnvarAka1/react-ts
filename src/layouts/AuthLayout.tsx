@@ -1,4 +1,5 @@
 import React from 'react'
+import Box from '@mui/material/Box'
 
 interface Props {
   readonly children: React.ReactNode
@@ -6,7 +7,9 @@ interface Props {
 
 function AuthLayout ({ children }: Props) {
   return (
-    <>{children}</>
+    <Box sx={{ background: 'F4F5F8', pb: 5 }}>
+      {children}
+    </Box>
   )
 }
 

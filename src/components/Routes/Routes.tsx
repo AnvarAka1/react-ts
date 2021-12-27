@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { generatePath, Redirect, Route, Switch } from 'react-router-dom'
 
 import { RouteType } from 'src/types'
 import * as ROUTES from 'src/constants/routes'
@@ -23,7 +23,7 @@ function Routes ({ routes }: Props) {
           )}
         />
       ))}
-      <Redirect to={ROUTES.FREELANCER_LIST} />
+      <Redirect to={generatePath(ROUTES.FREELANCER_DETAIL, { id: 1 })} />
     </Switch>
   )
 }

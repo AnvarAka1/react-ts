@@ -11,15 +11,13 @@ import { FreelancerType } from 'src/types'
 import * as ROUTES from 'src/constants/routes'
 import MyProjects from 'src/components/MyProjects/MyProjects'
 import { projectList } from 'src/mock/project'
+import { ListType } from 'src/types/crud'
 
 import FreelancerCard from './FreelancerCard'
 import FreelancerCategories from './FreelancerCategories'
 
 type Props = {
-  readonly list: {
-    isLoading: boolean
-    results: FreelancerType[]
-  }
+  readonly list: ListType<FreelancerType>
 }
 
 function FreelancerList ({ list }: Props) {
