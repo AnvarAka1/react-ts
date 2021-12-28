@@ -3,6 +3,8 @@ export const HOME_PATH = '/'
 export const SIGN_IN_PATH = '/sign-in'
 export const SIGN_UP_PATH = '/sign-up'
 
+export const PROFILE_DETAIL = '/profile'
+
 export const MY_PROJECT_LIST = '/my-projects/list'
 
 export const PROJECT_LIST = '/projects/list'

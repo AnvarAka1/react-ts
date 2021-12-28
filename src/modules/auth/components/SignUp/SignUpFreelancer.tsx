@@ -5,8 +5,8 @@ import Button from '@mui/material/Button'
 import Heading from 'src/components/Heading'
 import TextField from 'src/components/Fields/TextField'
 import PrimaryButton from 'src/components/Buttons/PrimaryButton'
-import AsyncSelectField from 'src/components/Fields/AsyncSelectField'
-import AsyncMultiSelectField from 'src/components/Fields/AsyncMultiSelectField'
+import StackSearchField from 'src/components/Fields/StackSearchField'
+import SkillsSearchMultiSelectField from 'src/components/Fields/SkillsSearchMultiSelectField'
 
 interface Props {
   readonly onPrevClick: (event: React.MouseEvent) => void
@@ -20,7 +20,7 @@ function SignUpFreelancer ({ onPrevClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12}>
-        <AsyncSelectField name="stack" label="Выберите стек" />
+        <StackSearchField />
       </Grid>
 
       <Grid item={true} xs={12}>
@@ -28,7 +28,7 @@ function SignUpFreelancer ({ onPrevClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12}>
-        <AsyncMultiSelectField name="skills" label="Навыки" />
+        <SkillsSearchMultiSelectField />
       </Grid>
 
       <Grid item={true} xs={12}>

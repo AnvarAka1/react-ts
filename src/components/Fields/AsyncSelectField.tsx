@@ -4,7 +4,7 @@ import { CircularProgress, TextField } from '@mui/material'
 
 import FieldWrapper from 'src/components/Fields/FieldWrapper'
 
-interface Props {
+export type AsyncSelectFieldProps = {
   readonly name: string
   readonly label: string
 }
@@ -21,7 +21,7 @@ const testResponse = [
   { id: 2, title: 'Very good' }
 ]
 
-function AsyncSelectField ({ name, label }: Props) {
+function AsyncSelectField ({ name, label }: AsyncSelectFieldProps) {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [options, setOptions] = useState<OptionType[]>([])

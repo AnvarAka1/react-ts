@@ -3,7 +3,7 @@ import { Field, FieldRenderProps } from 'react-final-form'
 
 type ValueType = string | number | null | undefined | Record<string, unknown>
 
-export interface FieldWrapperProps {
+export type FieldWrapperProps = {
   readonly name: string
   readonly type?: string
   readonly children: (props: FieldRenderProps<ValueType>) => React.ReactNode

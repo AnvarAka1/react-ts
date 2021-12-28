@@ -3,7 +3,7 @@ import { Autocomplete, CircularProgress, TextField } from '@mui/material'
 
 import FieldWrapper from 'src/components/Fields/FieldWrapper'
 
-interface Props {
+export type AsyncMultiSelectFieldProps = {
   readonly name: string
   readonly label: string
 }
@@ -20,7 +20,7 @@ const testResponse = [
   { id: 2, title: 'Very good' }
 ]
 
-function AsyncMultiSelectField ({ name, label }: Props) {
+function AsyncMultiSelectField ({ name, label }: AsyncMultiSelectFieldProps) {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [options, setOptions] = useState<OptionType[]>([])

@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 import Heading from 'src/components/Heading'
 import TextField from 'src/components/Fields/TextField'
 import PrimaryButton from 'src/components/Buttons/PrimaryButton'
-import AsyncSelectField from 'src/components/Fields/AsyncSelectField'
+import PositionSearchField from 'src/components/Fields/PositionSearchField'
 
 interface Props {
   readonly onPrevClick: (event: React.MouseEvent) => void
@@ -23,7 +23,7 @@ function SignUpClient ({ onPrevClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12}>
-        <AsyncSelectField name="position" label="Выберите должность" />
+        <PositionSearchField />
       </Grid>
 
       <Grid item={true} xs={12}>

@@ -6,7 +6,7 @@ type _FreelancerType = (
   & { status: string }
 )
 
-export const _freelancerList: _FreelancerType[] = [
+const _freelancerList: _FreelancerType[] = [
   {
     id: 1,
     firstName: 'Ольга',
