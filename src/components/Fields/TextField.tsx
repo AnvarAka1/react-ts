@@ -1,13 +1,13 @@
 import React from 'react'
-import MuiTextField, { TextFieldProps } from '@mui/material/TextField'
+import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField'
 
 import FieldWrapper from 'src/components/Fields/FieldWrapper'
 
-type Props = {
+export type TextFieldProps = {
   readonly name: string
-} & TextFieldProps
+} & MuiTextFieldProps
 
-function TextField (props: Props) {
+function TextField (props: TextFieldProps) {
   const {
     name,
     variant = 'outlined',

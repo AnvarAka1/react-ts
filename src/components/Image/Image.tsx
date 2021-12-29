@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from '@mui/material/Box'
+import Box, { BoxProps } from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 
 const ImageWrapper = styled(Box)`
@@ -18,16 +18,20 @@ const Blank = styled(Box)`
   background: transparent
 `
 
-type Props = {
+export type ImageProps = {
   readonly src: string
   readonly alt: string
   readonly width?: string | number
   readonly height?: string | number
-}
+} & BoxProps
 
-function Image ({ src, alt, width, height }: Props) {
+function Image ({ src, alt, width, height, ...props }: ImageProps) {
   return (
-    <ImageWrapper width={width} height={height}>
+    <ImageWrapper
+      width={width}
+      height={height}
+      {...props}
+    >
       {src ? <img src={src} alt={alt} /> : <Blank />}
     </ImageWrapper>
   )

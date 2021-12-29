@@ -5,7 +5,8 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
 import Heading from 'src/components/Heading'
-import TextField from 'src/components/Fields/TextField'
+import PasswordField from 'src/components/Fields/PasswordField'
+import EmailField from 'src/components/Fields/EmailField'
 
 function SignIn () {
   return (
@@ -14,10 +15,10 @@ function SignIn () {
       <CardContent>
         <Grid container={true} spacing={3}>
           <Grid item={true} xs={12}>
-            <TextField name="email" label="Эл. почта" />
+            <EmailField />
           </Grid>
           <Grid item={true} xs={12}>
-            <TextField name="password" type="password" label="Пароль" />
+            <PasswordField />
           </Grid>
 
         </Grid>

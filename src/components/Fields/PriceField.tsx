@@ -32,7 +32,7 @@ function PriceField (props: Props) {
           {...priceProps}
         />
       </Box>
-      <Box width="15%">
+      <Box width="20%">
         <CurrencySelectField
           name={currencyName}
           label={currencyLabel}

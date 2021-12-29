@@ -13,6 +13,7 @@ import RoleBox from 'src/modules/auth/components/SignUp/RoleBox'
 import { CLIENT, FREELANCER } from 'src/constants/roles'
 import CheckboxField from 'src/components/Fields/CheckboxField'
 import PrimaryButton from 'src/components/Buttons/PrimaryButton'
+import PasswordField from 'src/components/Fields/PasswordField'
 
 interface Props {
   readonly onNextClick: (role: string) => void
@@ -50,19 +51,12 @@ function SignUpGeneral ({ onNextClick }: Props) {
       </Grid>
 
       <Grid item={true} xs={12}>
-        <TextField
-          name="password"
-          type="password"
-          label="Пароль"
-          autoComplete="password"
-        />
+        <PasswordField />
       </Grid>
 
       <Grid item={true} xs={12}>
-        <TextField
+        <PasswordField
           name="confirmPassword"
-          type="password"
-          label="Повторите пароль"
           autoComplete="new-password"
         />
       </Grid>

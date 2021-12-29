@@ -30,6 +30,7 @@ function CurrencySelectField (props: Props) {
       name={name}
       label={label}
       options={OPTIONS}
+      fullWidth={true}
       {...rest}
     />
   )
