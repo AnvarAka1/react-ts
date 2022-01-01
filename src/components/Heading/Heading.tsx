@@ -2,7 +2,7 @@ import React from 'react'
 import Typography, { TypographyProps } from '@mui/material/Typography'
 
 type Props = {
-  readonly children: string
+  readonly children: string | React.ReactNode
 } & TypographyProps
 
 function Heading ({ children, ...props }: Props) {

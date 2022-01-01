@@ -7,36 +7,36 @@ import { useHistory } from 'react-router-dom'
 import { categoryList } from 'src/mock/categories'
 import PageContainer from 'src/components/PageContainer'
 import Heading from 'src/components/Heading'
-import { FreelancerType } from 'src/types'
+import { ProjectType } from 'src/types'
 import * as ROUTES from 'src/constants/routes'
 import MyProjects from 'src/components/MyProjects/MyProjects'
 import { projectList } from 'src/mock/project'
 import { ListType } from 'src/types/crud'
 
-import FreelancerCard from './FreelancerCard'
-import FreelancerCategories from './FreelancerCategories'
+import ProjectCard from '../../components/ProjectList/ProjectCard'
+import ProjectCategories from '../../components/ProjectList/ProjectCategories'
 
 type Props = {
-  readonly list: ListType<FreelancerType>
+  readonly list: ListType<ProjectType>
 }
 
-function FreelancerList ({ list }: Props) {
+function ProjectList ({ list }: Props) {
   const history = useHistory()
-  const freelancers = list.results
+  const projects = list.results
 
   return (
     <PageContainer>
       <Grid container={true} spacing={3}>
         <Grid item={true} xs={12} lg={3}>
           <Heading>Категории</Heading>
-          <FreelancerCategories categories={categoryList} />
+          <ProjectCategories categories={categoryList} />
         </Grid>
         <Grid item={true} xs={12} lg={6}>
           <Heading>Исполнители</Heading>
           <Grid container={true} spacing={2}>
-            {freelancers.map(freelancer => (
-              <Grid key={freelancer.id} item={true} xs={12}>
-                <FreelancerCard freelancer={freelancer} />
+            {projects.map(project => (
+              <Grid key={project.id} item={true} xs={12}>
+                <ProjectCard project={project} />
               </Grid>
             ))}
           </Grid>
@@ -51,7 +51,7 @@ function FreelancerList ({ list }: Props) {
               fullWidth={true}
               onClick={() => history.push(ROUTES.PROJECT_CREATE)}
             >
-              + Создать проект
+              + Создать команду
             </Button>
             <Box sx={{ mt: 3 }}>
               <MyProjects projects={projectList} />
@@ -63,4 +63,4 @@ function FreelancerList ({ list }: Props) {
   )
 }
 
-export default FreelancerList
+export default ProjectList

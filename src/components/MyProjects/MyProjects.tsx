@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import * as ROUTES from 'src/constants/routes'
 import { ProjectType } from 'src/types'
 import RouterLink from 'src/components/RouterLink'
+import Heading from 'src/components/Heading'
 
 import MyProject from './MyProject'
 
@@ -16,7 +17,8 @@ type Props = {
 function MyProjects ({ projects }: Props) {
   return (
     <Box>
-      <Box display={'flex'} justifyContent={'flex-end'}>
+      <Box display={'flex'} justifyContent={'space-between'}>
+        <Heading>Мои проекты</Heading>
         <RouterLink to={ROUTES.MY_PROJECT_LIST} underline={'hover'}>
           <Typography gutterBottom={true} variant={'caption'}>
             Посмотреть все

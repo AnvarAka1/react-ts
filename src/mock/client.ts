@@ -8,6 +8,10 @@ export const clientList: ClientType[] = [
     fullName: 'Ольга Давыдова',
     phone: '+9983383331',
     role: 'client',
+    rating: {
+      rating: 5,
+      count: 2
+    },
     position: {
       id: 1,
       name: 'HR'
@@ -28,6 +32,10 @@ export const clientList: ClientType[] = [
     fullName: 'Александр Крылов',
     phone: '+9983383331',
     role: 'client',
+    rating: {
+      rating: 5,
+      count: 2
+    },
     position: {
       id: 2,
       name: 'Accounting'

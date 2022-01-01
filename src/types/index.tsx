@@ -8,6 +8,13 @@ export interface RouteType {
   path: string
 }
 
+export type DateType = {
+  readonly createdDate: string
+  readonly updatedDate: string | null
+}
+
+export type FileType = string
+
 export type UserType = {
   readonly id: number
   readonly role: string
@@ -65,6 +72,7 @@ export type ClientType = {
   readonly id: number
   readonly companyName: string
   readonly position: PositionType
+  readonly rating: RatingType
   readonly userId: number
 } & Omit<UserType, 'id'>
 
@@ -84,12 +92,21 @@ export type ProjectStatusType = (
 export type ProjectType = {
   readonly id: number
   readonly name: string
+  readonly description: string
+  readonly requirement: string
+  readonly paymentMethods: PaymentMethodsType
+  readonly price: PriceType
+  readonly overwork: boolean
+  readonly stack: StackType
+  readonly skills: SkillType[]
   readonly status: ProjectStatusType
+  readonly file: FileType | null
   readonly freelancers: FreelancerType[] | null
   readonly freelancer: FreelancerType | null
   readonly client: ClientType
+  readonly additionalComment?: string | null
   readonly review?: ReviewType
-}
+} & DateType
 
 export type StackType = {
   readonly id: number

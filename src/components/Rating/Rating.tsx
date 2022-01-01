@@ -9,7 +9,7 @@ type Props = {
   readonly value: RatingType
 }
 
-function FreelancerRating ({ value }: Props) {
+function Rating ({ value }: Props) {
   const { rating, count } = value
   return (
     <Box display="flex">
@@ -20,4 +20,4 @@ function FreelancerRating ({ value }: Props) {
   )
 }
 
-export default FreelancerRating
+export default Rating

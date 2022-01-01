@@ -9,7 +9,7 @@ import Heading from 'src/components/Heading'
 import ActivityStatus from 'src/components/Statuses/ActivityStatus'
 import { FreelancerType } from 'src/types'
 import PaymentMethods from 'src/components/PaymentMethods'
-import FreelancerRating from 'src/components/FreelancerRating/FreelancerRating'
+import Rating from 'src/components/Rating/Rating'
 import FreelancerPrice from 'src/components/FreelancerPrice/FreelancerPrice'
 import FreelancerPortfolio from 'src/components/FreelancerPortfolio'
 import PrimaryButton from 'src/components/Buttons/PrimaryButton'
@@ -45,7 +45,7 @@ function GeneralInfoCard ({ freelancer }: Props) {
 
         <Box mb={2}>
           <Heading>Рейтинг исполнителя</Heading>
-          <FreelancerRating value={rating} />
+          <Rating value={rating} />
         </Box>
 
         <Box mb={4}>
