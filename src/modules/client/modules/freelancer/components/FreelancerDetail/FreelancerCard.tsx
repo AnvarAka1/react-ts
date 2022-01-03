@@ -28,7 +28,7 @@ function FreelancerCard ({ freelancer }: Props) {
               <Typography variant="subtitle2">{stack.name}</Typography>
             </Box>
           </Box>
-          <RouterLink to={ROUTES.FREELANCER_LIST}>Назад</RouterLink>
+          <RouterLink to={ROUTES.FREELANCER_LIST_PATH}>Назад</RouterLink>
         </Box>
         <Box mb={1}>
           <Typography variant="subtitle2" gutterBottom={true}>О себе</Typography>

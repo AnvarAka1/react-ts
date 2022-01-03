@@ -7,6 +7,6 @@ export default () => [
   {
     component: ProfileDetailContainer,
     layout: AuthLayout,
-    path: ROUTES.PROFILE_DETAIL,
+    path: ROUTES.PROFILE_DETAIL_PATH,
   }
 ]

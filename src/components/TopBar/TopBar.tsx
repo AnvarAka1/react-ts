@@ -49,10 +49,10 @@ function TopBar () {
                   <Logo />
                 </RouterLink>
                 <Box display="flex" ml={3}>
-                  <ActiveRouterLink to={ROUTES.PROJECT_LIST}>
+                  <ActiveRouterLink to={ROUTES.PROJECT_LIST_PATH}>
                     Публикации
                   </ActiveRouterLink>
-                  <ActiveRouterLink to={ROUTES.FREELANCER_LIST} sx={{ ml: 2 }}>
+                  <ActiveRouterLink to={ROUTES.FREELANCER_LIST_PATH} sx={{ ml: 2 }}>
                     Исполнители
                   </ActiveRouterLink>
                 </Box>

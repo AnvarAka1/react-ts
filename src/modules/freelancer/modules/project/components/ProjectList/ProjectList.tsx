@@ -49,7 +49,7 @@ function ProjectList ({ list }: Props) {
               variant={'outlined'}
               color={'primary'}
               fullWidth={true}
-              onClick={() => history.push(ROUTES.PROJECT_CREATE)}
+              onClick={() => history.push(ROUTES.PROJECT_CREATE_PATH)}
             >
               + Создать команду
             </Button>

@@ -8,7 +8,6 @@ type Props = {
 function PrimaryButton ({ children, ...props }: Props) {
   return (
     <Button
-      type="button"
       color="primary"
       variant="contained"
       {...props}

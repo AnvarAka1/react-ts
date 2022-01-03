@@ -20,11 +20,17 @@ function PriceField (props: Props) {
     currencyName = 'price.currency',
     currencyLabel = 'Валюта',
     priceProps,
-    currencyProps
+    currencyProps,
+    ...rest
   } = props
 
   return (
-    <Box display="flex" alignItems="center">
+    <Box
+      display="flex"
+      alignItems="center"
+      width="100%"
+      {...rest}
+    >
       <Box mr={2} width="80%">
         <TextField
           name={priceName}

@@ -19,7 +19,7 @@ function MyProjects ({ projects }: Props) {
     <Box>
       <Box display={'flex'} justifyContent={'space-between'}>
         <Heading>Мои проекты</Heading>
-        <RouterLink to={ROUTES.MY_PROJECT_LIST} underline={'hover'}>
+        <RouterLink to={ROUTES.MY_PROJECT_LIST_PATH} underline={'hover'}>
           <Typography gutterBottom={true} variant={'caption'}>
             Посмотреть все
           </Typography>
@@ -27,7 +27,7 @@ function MyProjects ({ projects }: Props) {
       </Box>
 
       {projects.map(project => {
-        const path = generatePath(ROUTES.PROJECT_DETAIL, { id: project.id })
+        const path = generatePath(ROUTES.PROJECT_DETAIL_PATH, { id: project.id })
 
         return (
           <MyProject

@@ -6,8 +6,6 @@ import Typography from '@mui/material/Typography'
 
 import { ProjectType } from 'src/types'
 import Skills from 'src/components/Skills'
-import RouterLink from 'src/components/RouterLink'
-import * as ROUTES from 'src/constants/routes'
 import DateFormat from 'src/components/DateFormat/DateFormat'
 
 type Props = {
@@ -29,16 +27,14 @@ function ProjectCard ({ project }: Props) {
   return (
     <Card>
       <CardContent>
-        <Box display="flex" alignItems="center" justifyContent="space-between">
-          <Box display="flex" mb={1}>
+        <Box mb={1} display="flex" justifyContent="space-between">
+          <Box>
             <Typography>{name}</Typography>
             <Typography variant="subtitle2">{stack.name}</Typography>
-            <Typography variant="subtitle2">
-              <DateFormat>{createdDate}</DateFormat>
-            </Typography>
-
           </Box>
-          <RouterLink to={ROUTES.FREELANCER_LIST}>Назад</RouterLink>
+          <Typography variant="subtitle2">
+            <DateFormat>{createdDate}</DateFormat>
+          </Typography>
         </Box>
         <Box mb={1}>
           <Typography variant="subtitle2" gutterBottom={true}>Описание</Typography>
@@ -52,16 +48,16 @@ function ProjectCard ({ project }: Props) {
           <Typography variant="subtitle2" gutterBottom={true}>Прикрепленные файлы</Typography>
           <Typography variant="subtitle2" color="inherit">{file}</Typography>
         </Box>
-        <Box>
+        <Box mb={1}>
           <Typography variant="subtitle2" gutterBottom={true}>Нужные навыки</Typography>
           <Skills skills={skills} />
         </Box>
-        <Box>
+        <Box mb={1}>
           <Typography
             variant="subtitle2"
             gutterBottom={true}
           >
-            Заинтересованные исполнители: {freelancers && freelancers.length}
+            Заинтересованные исполнители: {freelancers && freelancers.length} человек
           </Typography>
         </Box>
       </CardContent>

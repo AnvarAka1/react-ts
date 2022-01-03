@@ -29,7 +29,7 @@ const _projectList: _ProjectType[] = [
       cash: true,
       transfer: false
     },
-    additionalComment: null,
+    additionalComment: 'Если ваша работа понравится, можем договориться об официальной трудоустройстве 🚀',
     overwork: false,
     skills: [
       {
@@ -46,6 +46,7 @@ const _projectList: _ProjectType[] = [
       name: 'Front-end'
     },
     status: 'inProgress',
+    reassessment: true,
     freelancers: null,
     freelancer: null,
     client: clientList[0],
@@ -84,8 +85,9 @@ const _projectList: _ProjectType[] = [
       cash: true,
       transfer: false
     },
-    additionalComment: null,
+    additionalComment: 'Если ваша работа понравится, можем договориться об официальной трудоустройстве 🚀',
     overwork: false,
+    reassessment: true,
     skills: [
       {
         id: 1,
@@ -140,8 +142,9 @@ const _projectList: _ProjectType[] = [
       cash: true,
       transfer: false
     },
-    additionalComment: null,
+    additionalComment: 'Если ваша работа понравится, можем договориться об официальной трудоустройстве 🚀',
     overwork: false,
+    reassessment: false,
     skills: [
       {
         id: 1,

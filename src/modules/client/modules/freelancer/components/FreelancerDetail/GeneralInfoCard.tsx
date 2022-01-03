@@ -15,10 +15,20 @@ import FreelancerPortfolio from 'src/components/FreelancerPortfolio'
 import PrimaryButton from 'src/components/Buttons/PrimaryButton'
 
 type Props = {
-  freelancer: FreelancerType
+  readonly isRequestSent: boolean
+  readonly onRequestCancel: () => Promise<void>
+  readonly onRequestDialogOpen: () => void
+  readonly freelancer: FreelancerType
 }
 
-function GeneralInfoCard ({ freelancer }: Props) {
+function GeneralInfoCard (props: Props) {
+  const {
+    freelancer,
+    isRequestSent,
+    onRequestCancel,
+    onRequestDialogOpen
+  } = props
+
   const {
     status,
     rating,
@@ -61,9 +71,18 @@ function GeneralInfoCard ({ freelancer }: Props) {
         <Divider />
 
         <Box mt={2}>
-          <PrimaryButton onClick={() => {}} fullWidth={true}>
-            Отправить запрос
-          </PrimaryButton>
+          {isRequestSent
+            ? (
+              <PrimaryButton onClick={onRequestCancel} fullWidth={true}>
+                Отменить запрос
+              </PrimaryButton>
+            )
+            : (
+              <PrimaryButton onClick={onRequestDialogOpen} fullWidth={true}>
+                Отправить запрос
+              </PrimaryButton>
+            )}
+
         </Box>
       </CardContent>
     </Card>

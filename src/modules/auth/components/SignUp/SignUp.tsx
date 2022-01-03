@@ -9,19 +9,19 @@ import SignUpClient from './SignUpClient'
 import SignUpFreelancer from './SignUpFreelancer'
 
 export interface GeneralValues {
-  firstName?: string
-  lastName?: string
-  email?: string
-  password?: string
-  confirmPassword?: string
-  role: string
-  agree?: string
+  readonly firstName?: string
+  readonly lastName?: string
+  readonly email?: string
+  readonly password?: string
+  readonly confirmPassword?: string
+  readonly role: string
+  readonly agree?: string
 }
 
 export interface FreelancerValues {
-  stack?: number
-  phone?: string
-  about?: string
+  readonly stack?: number
+  readonly phone?: string
+  readonly about?: string
 }
 
 export type Values = GeneralValues & FreelancerValues

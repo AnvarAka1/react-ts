@@ -100,6 +100,7 @@ export type ProjectType = {
   readonly stack: StackType
   readonly skills: SkillType[]
   readonly status: ProjectStatusType
+  readonly reassessment: boolean
   readonly file: FileType | null
   readonly freelancers: FreelancerType[] | null
   readonly freelancer: FreelancerType | null

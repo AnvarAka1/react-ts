@@ -8,11 +8,11 @@ export default () => [
   {
     component: ProjectDetailContainer,
     layout: AuthLayout,
-    path: ROUTES.PROJECT_DETAIL,
+    path: ROUTES.PROJECT_DETAIL_PATH,
   },
   {
     component: ProjectListContainer,
     layout: AuthLayout,
-    path: ROUTES.PROJECT_LIST
+    path: ROUTES.PROJECT_LIST_PATH
   }
 ]

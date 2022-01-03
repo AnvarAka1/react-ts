@@ -17,18 +17,24 @@ import Overwork from 'src/components/Overwork/Overwork'
 import Avatar from 'src/components/Avatar'
 import ClientCompanyPosition from 'src/components/ClientCompanyPosition'
 import PhoneButton from 'src/components/PhoneButton'
+import Reassessment from 'src/components/Reassessment'
+import TextSecondary from 'src/components/TextSecondary'
 
 type Props = {
   readonly project: ProjectType
+  readonly isRequestSent: boolean
+  readonly onRequestDialogOpen: () => void
+  readonly onRequestCancel: () => Promise<void>
 }
 
-function GeneralInfoCard ({ project }: Props) {
+function GeneralInfoCard ({ project, isRequestSent, onRequestDialogOpen, onRequestCancel }: Props) {
   const {
     paymentMethods,
     price,
     additionalComment,
     overwork,
     status,
+    reassessment,
     client
   } = project
 
@@ -97,21 +103,38 @@ function GeneralInfoCard ({ project }: Props) {
 
         <Box mb={2}>
           <Heading>Комментарии от автора</Heading>
-          {additionalComment}
+          <TextSecondary>{additionalComment}</TextSecondary>
         </Box>
 
         <Divider />
 
         <Box mb={4} mt={2}>
           <Heading>Стоимость: <Price value={price} /></Heading>
+          <Reassessment value={reassessment} />
         </Box>
 
         <Box mt={2}>
-          <PrimaryButton onClick={() => {
-          }} fullWidth={true}
-          >
-            Отправить запрос
-          </PrimaryButton>
+          {isRequestSent
+            ? (
+              <PrimaryButton
+                type="button"
+                fullWidth={true}
+                variant="outlined"
+                onClick={onRequestCancel}
+              >
+                Отменить запрос
+              </PrimaryButton>
+            )
+            : (
+              <PrimaryButton
+                type="button"
+                onClick={onRequestDialogOpen}
+                fullWidth={true}
+              >
+                Отправить запрос
+              </PrimaryButton>
+            )}
+
         </Box>
       </CardContent>
     </Card>

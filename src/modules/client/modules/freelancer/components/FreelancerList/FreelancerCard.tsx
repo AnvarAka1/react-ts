@@ -25,7 +25,7 @@ function FreelancerCard ({ freelancer }: Props) {
     description
   } = freelancer
 
-  const path = generatePath(ROUTES.FREELANCER_DETAIL, { id })
+  const path = generatePath(ROUTES.FREELANCER_DETAIL_PATH, { id })
 
   return (
     <HoverCard>

@@ -30,10 +30,10 @@ function ProjectsCard ({ projects }: Props) {
           const reviewId = path(['review', 'id'], project) as number
           const rating = path(['review', 'rating'], project) as number
 
-          const projectPath = generatePath(ROUTES.PROJECT_DETAIL, { id })
-          const clientPath = generatePath(ROUTES.USER_DETAIL, { id: clientId, role })
+          const projectPath = generatePath(ROUTES.PROJECT_DETAIL_PATH, { id })
+          const clientPath = generatePath(ROUTES.USER_DETAIL_PATH, { id: clientId, role })
           const reviewPath = reviewId
-            ? generatePath(ROUTES.PROJECT_REVIEW, { id: reviewId })
+            ? generatePath(ROUTES.PROJECT_REVIEW_PATH, { id: reviewId })
             : ''
 
           return (

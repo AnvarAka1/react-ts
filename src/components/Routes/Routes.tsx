@@ -23,7 +23,7 @@ function Routes ({ routes }: Props) {
           )}
         />
       ))}
-      <Redirect to={generatePath(ROUTES.PROFILE_DETAIL)} />
+      <Redirect to={generatePath(ROUTES.PROFILE_DETAIL_PATH)} />
     </Switch>
   )
 }

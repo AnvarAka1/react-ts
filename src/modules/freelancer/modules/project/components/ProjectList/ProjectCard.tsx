@@ -34,7 +34,7 @@ function ProjectCard ({ project }: Props) {
     createdDate
   } = project
 
-  const path = generatePath(ROUTES.PROJECT_DETAIL, { id })
+  const path = generatePath(ROUTES.PROJECT_DETAIL_PATH, { id })
 
   return (
     <HoverCard style={{ position: 'relative' }}>
