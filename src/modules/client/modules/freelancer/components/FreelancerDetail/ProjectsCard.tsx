@@ -14,7 +14,7 @@ import * as ROUTES from 'src/constants/routes'
 import Stars from 'src/components/Stars'
 
 type Props = {
-  readonly projects: ProjectType[]
+  readonly projects: ProjectType[] | null
 }
 
 function ProjectsCard ({ projects }: Props) {
@@ -22,7 +22,7 @@ function ProjectsCard ({ projects }: Props) {
     <Card>
       <CardContent>
         <Heading>Проекты</Heading>
-        {projects.map(project => {
+        {projects?.map(project => {
           const id = project.id
           const clientId = project.client.id
           const name = project.client.fullName

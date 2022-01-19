@@ -12,6 +12,7 @@ import PrimaryButton from 'src/components/Buttons/PrimaryButton'
 import withForm, { withFormProps } from 'src/components/Form/withForm'
 import EmptyIconWrapper from 'src/components/EmptyIconWrapper'
 import { ProjectType } from 'src/types'
+import { emptyArray } from 'src/constants/helpers'
 
 import AvailableProjectItem from './AvailableProjectItem'
 
@@ -21,8 +22,6 @@ type Props = {
 
 type ActiveProjectType = ProjectType & { active?: boolean }
 
-const empty: never[] = []
-
 const getNewProjects = (id: number, projects: ActiveProjectType[]) =>
   map(project => id === project.id
     ? { ...project, active: !project.active }
@@ -31,7 +30,7 @@ const getNewProjects = (id: number, projects: ActiveProjectType[]) =>
 function RequestDialogForm ({ open, onClose, form }: Props) {
   const { handleSubmit } = form
   const projectsField = useField('projects')
-  const projects: ActiveProjectType[] = projectsField.input.value || empty
+  const projects: ActiveProjectType[] = projectsField.input.value || emptyArray
 
   const handleProjectClick = (id: number) => {
     const newProjects = getNewProjects(id, projects)

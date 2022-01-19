@@ -4,14 +4,12 @@ export enum ActionEnum {
   FAIL = 'fail'
 }
 
-export type ActionType<T> = {
+export type ActionType = {
   type: ActionEnum.PENDING | ActionEnum.FAIL | ActionEnum.SUCCESS,
-  payload?: T | null
   errorPayload?: Record<string, unknown> | null
 }
 
-export type StateType<T> = {
-  data?: T | null
+export type StateType = {
   error?: Record<string, unknown> | null
   isSuccess: boolean
   isFail: boolean
@@ -26,14 +24,13 @@ export const initialState = {
   isLoading: false,
 }
 
-export const createReducer = <T> () => (state: StateType<T>, action: ActionType<T>): StateType<T> => {
+export const createReducer = () => (state: StateType, action: ActionType): StateType => {
   if (action.type === ActionEnum.PENDING) {
     return { ...state, isLoading: true }
   }
 
   if (action.type === ActionEnum.SUCCESS) {
     return {
-      data: action.payload,
       error: null,
       isSuccess: true,
       isFail: false,
@@ -43,7 +40,6 @@ export const createReducer = <T> () => (state: StateType<T>, action: ActionType<
 
   if (action.type === ActionEnum.FAIL) {
     return {
-      data: null,
       error: action.errorPayload,
       isSuccess: false,
       isFail: true,

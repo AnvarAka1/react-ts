@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid'
 import { ProjectType } from 'src/types'
 import PageContainer from 'src/components/PageContainer'
 import useDialog from 'src/hooks/useDialog'
+import { ResponseDataType } from 'src/api/types'
 
 import RequestDialogForm from './RequestDialogForm'
 import ProjectCard from './ProjectCard'
@@ -13,8 +14,8 @@ import { RequestDialogFieldTypes } from '../../types'
 
 type Props = {
   readonly isLoading: boolean
-  readonly detail: ProjectType
-  readonly onRequestSend: (values: RequestDialogFieldTypes) => Promise<void>
+  readonly detail: ProjectType | null
+  readonly onRequestSend: (values: RequestDialogFieldTypes) => Promise<ResponseDataType<null>>
   readonly onRequestCancel: () => Promise<void>
 }
 
@@ -34,15 +35,17 @@ function ProjectDetail ({ isLoading, detail, onRequestSend, onRequestCancel }: P
     <PageContainer>
       <Grid container={true} spacing={3}>
         <Grid item={true} xs={12} lg={8}>
-          {!isLoading && <ProjectCard project={detail} />}
+          {!isLoading && detail && <ProjectCard project={detail} />}
         </Grid>
         <Grid item={true} xs={12} lg={4}>
-          <GeneralInfoCard
-            project={detail}
-            isRequestSent={isRequestSent}
-            onRequestDialogOpen={handleOpen}
-            onRequestCancel={onRequestCancel}
-          />
+          {!isLoading && detail && (
+            <GeneralInfoCard
+              project={detail}
+              isRequestSent={isRequestSent}
+              onRequestDialogOpen={handleOpen}
+              onRequestCancel={onRequestCancel}
+            />
+          )}
         </Grid>
       </Grid>
       <RequestDialogForm

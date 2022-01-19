@@ -1,4 +1,4 @@
-import * as API from '../constant'
+import * as API from 'src/api/constants'
 
 export const isProd = (
   location.hostname === API.APP_PROD_URL

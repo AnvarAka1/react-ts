@@ -27,8 +27,8 @@ export const getHttpRequest = () => {
   return axios.create(config)
 }
 
-type OptionsType = Record<string, unknown>
-type ParamsType = Record<string, unknown>
+export type OptionsType = Record<string, unknown>
+export type ParamsType = Record<string, unknown>
 
 function Request () {
   return {
@@ -53,10 +53,10 @@ function Request () {
 
       return http.put(url, data, config)
     },
-    delete: async <T>(url: string, data: T, params?: ParamsType, options?: OptionsType) => {
+    delete: async <T>(url: string, data?: T, params?: ParamsType, options?: OptionsType) => {
       const http = getHttpRequest()
       const headers = getHeaders()
-      const config = { headers, params, ...options }
+      const config = { headers, params, data, ...options }
 
       return http.delete(url, config)
     },

@@ -34,7 +34,7 @@ function ProjectList ({ list }: Props) {
         <Grid item={true} xs={12} lg={6}>
           <Heading>Исполнители</Heading>
           <Grid container={true} spacing={2}>
-            {projects.map(project => (
+            {projects?.map(project => (
               <Grid key={project.id} item={true} xs={12}>
                 <ProjectCard project={project} />
               </Grid>

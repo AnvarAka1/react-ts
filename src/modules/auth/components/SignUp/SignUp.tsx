@@ -8,24 +8,6 @@ import SignUpGeneral from './SignUpGeneral'
 import SignUpClient from './SignUpClient'
 import SignUpFreelancer from './SignUpFreelancer'
 
-export interface GeneralValues {
-  readonly firstName?: string
-  readonly lastName?: string
-  readonly email?: string
-  readonly password?: string
-  readonly confirmPassword?: string
-  readonly role: string
-  readonly agree?: string
-}
-
-export interface FreelancerValues {
-  readonly stack?: number
-  readonly phone?: string
-  readonly about?: string
-}
-
-export type Values = GeneralValues & FreelancerValues
-
 type Props = Record<string, unknown> & withFormProps
 
 const GENERAL = 'general'

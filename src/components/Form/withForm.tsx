@@ -2,13 +2,13 @@ import React from 'react'
 import { Form, FormRenderProps } from 'react-final-form'
 import arrayMutators from 'final-form-arrays'
 
-export interface withFormProps {
+export type withFormProps = {
   form: FormRenderProps
 }
 
 interface HocProps<ArgsType> {
-  readonly initialValues?: Record<string, unknown>,
-  readonly onSubmit: (formValues: ArgsType) => Promise<void> | void
+  readonly initialValues?: Record<string, unknown> | null,
+  readonly onSubmit: (formValues: ArgsType) => Promise<unknown | void> | void
 }
 
 function withForm<T extends { form: FormRenderProps }> (Component: (props: T) => JSX.Element) {
@@ -16,7 +16,7 @@ function withForm<T extends { form: FormRenderProps }> (Component: (props: T) =>
     const { initialValues, onSubmit, ...rest } = props
 
     return (
-      <Form initialValues={initialValues} onSubmit={onSubmit} mutators={{ ...arrayMutators }}>
+      <Form initialValues={initialValues || {}} onSubmit={onSubmit} mutators={{ ...arrayMutators }}>
         {(formProps: FormRenderProps) => (
           <Component
             {...rest as unknown as T}

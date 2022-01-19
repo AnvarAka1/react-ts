@@ -1,18 +1,16 @@
 import React from 'react'
 
 import WorklanceLayout from 'src/layouts/WorklanceLayout'
-import { projectList } from 'src/mock/project'
 
 import ProjectList from '../components/ProjectList'
+import { useProjectList } from '../hooks'
 
 function ProjectListContainer () {
-  const mockList = { isLoading: false, results: projectList, count: 6 }
+  const projectList = useProjectList()
 
   return (
     <WorklanceLayout title="Проекты">
-      <ProjectList
-        list={mockList}
-      />
+      <ProjectList list={projectList} />
     </WorklanceLayout>
   )
 }

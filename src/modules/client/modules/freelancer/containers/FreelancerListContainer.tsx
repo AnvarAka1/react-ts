@@ -1,17 +1,17 @@
 import React from 'react'
 
 import WorklanceLayout from 'src/layouts/WorklanceLayout'
-import { freelancerList } from 'src/mock/freelancer'
 
 import FreelancerList from '../components/FreelancerList'
+import { useFreelancerList } from '../hooks'
 
 function FreelancerListContainer () {
-  const mockList = { isLoading: false, results: freelancerList, count: 6 }
+  const freelancerList = useFreelancerList()
 
   return (
     <WorklanceLayout title="Freelancers">
       <FreelancerList
-        list={mockList}
+        list={freelancerList}
       />
     </WorklanceLayout>
   )
