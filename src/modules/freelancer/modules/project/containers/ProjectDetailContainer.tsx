@@ -2,31 +2,32 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import WorklanceLayout from 'src/layouts/WorklanceLayout'
-import { projectList } from 'src/mock/project'
 
 import ProjectDetail from '../components/ProjectDetail'
 import { RequestDialogFieldTypes } from '../types'
+import { useProjectDetail, useProjectRequestCancel, useProjectRequestSend } from '../hooks'
 
 function ProjectDetailContainer () {
   const { id } = useParams<{ id: string }>()
-  const intId = parseInt(id)
-  const project = projectList[intId]
-  const mockDetail = { isLoading: false, result: project }
+  const projectDetail = useProjectDetail(id)
+  const projectRequestSend = useProjectRequestSend(id)
+  const projectRequestCancel = useProjectRequestCancel(id)
 
-  const title = project.name
+  const title = projectDetail.detail?.name
 
-  const isLoading = mockDetail.isLoading
+  const isLoading = projectDetail.isLoading
 
-  const handleRequestSend = async (values: RequestDialogFieldTypes) => {
-  }
+  const handleRequestSend = async (values: RequestDialogFieldTypes) =>
+    projectRequestSend.send(values)
 
-  const handleRequestCancel = async () => {}
+  const handleRequestCancel = async () =>
+    projectRequestCancel.cancel()
 
   return (
     <WorklanceLayout title={title}>
       <ProjectDetail
         isLoading={isLoading}
-        detail={mockDetail.result}
+        detail={projectDetail.detail}
         onRequestSend={handleRequestSend}
         onRequestCancel={handleRequestCancel}
       />

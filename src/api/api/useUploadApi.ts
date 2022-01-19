@@ -1,6 +1,6 @@
 import { useReducer, useCallback } from 'react'
 
-import { initialState, createReducer, ActionEnum } from '../api/state'
+import { initialState, createReducer, ActionEnum } from '../api/dataState'
 import { getDataFromSuccess, getDataFromError } from '../api/utils'
 import useRequest from '../useRequest'
 import { ResponseType } from '../types'
@@ -11,7 +11,7 @@ function useDeleteApi<RequestDTO, ResponseDTO> (url: string) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const requestCallback = useCallback((data: RequestDTO, onProgress: (event: ProgressEvent) => void) => {
-    dispatch({ type: ActionEnum.PENDING })
+    dispatch({ type: ActionEnum.PENDING, payload: null })
 
     return request.upload<RequestDTO>(url, data, onProgress)
       .then((response: ResponseType<ResponseDTO>) => {
@@ -22,7 +22,7 @@ function useDeleteApi<RequestDTO, ResponseDTO> (url: string) {
       })
       .catch(response => {
         const error = getDataFromError(response)
-        dispatch({ type: ActionEnum.FAIL, errorPayload: error })
+        dispatch({ type: ActionEnum.FAIL, payload: null, errorPayload: error })
 
         return Promise.reject(error)
       })

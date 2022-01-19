@@ -34,7 +34,7 @@ function FreelancerList ({ list }: Props) {
         <Grid item={true} xs={12} lg={6}>
           <Heading>Исполнители</Heading>
           <Grid container={true} spacing={2}>
-            {freelancers.map(freelancer => (
+            {freelancers?.map(freelancer => (
               <Grid key={freelancer.id} item={true} xs={12}>
                 <FreelancerCard freelancer={freelancer} />
               </Grid>

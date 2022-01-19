@@ -3,10 +3,11 @@ import React from 'react'
 import { CenteredLayout } from 'src/layouts'
 import { CLIENT } from 'src/constants/roles'
 
-import SignUp, { Values } from '../components/SignUp/SignUp'
+import SignUp from '../components/SignUp'
+import { SignUpFieldValuesType } from '../types'
 
 function SignUpContainer () {
-  const handleSubmit = (values: Values) => {
+  const handleSubmit = (values: SignUpFieldValuesType) => {
     localStorage.setItem('auth', JSON.stringify(values))
   }
 

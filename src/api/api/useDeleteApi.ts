@@ -1,24 +1,20 @@
-import { useReducer, useCallback } from 'react'
+import { useCallback, useReducer } from 'react'
 
-import { initialState, createReducer, ActionEnum } from '../api/state'
-import { getDataFromSuccess, getDataFromError } from '../api/utils'
+import { ActionEnum, createReducer, initialState } from '../api/state'
+import { getDataFromError } from '../api/utils'
 import useRequest from '../useRequest'
-import { ResponseType } from '../types'
 
-function useDeleteApi<RequestDTO, ResponseDTO> (url: string) {
+function useDeleteApi<RequestDTO> (url: string) {
   const request = useRequest()
-  const reducer = createReducer<ResponseDTO>()
+  const reducer = createReducer()
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const requestCallback = useCallback((data: RequestDTO) => {
+  const requestCallback = useCallback((data?: RequestDTO) => {
     dispatch({ type: ActionEnum.PENDING })
 
     return request.delete<RequestDTO>(url, data)
-      .then((response: ResponseType<ResponseDTO>) => {
-        const data = getDataFromSuccess(response)
-        dispatch({ type: ActionEnum.SUCCESS, payload: data })
-
-        return data
+      .then(() => {
+        dispatch({ type: ActionEnum.SUCCESS })
       })
       .catch(response => {
         const error = getDataFromError(response)
@@ -28,7 +24,7 @@ function useDeleteApi<RequestDTO, ResponseDTO> (url: string) {
       })
   }, [request, url])
 
-  return { ...state, post: requestCallback }
+  return { ...state, remove: requestCallback }
 }
 
 export default useDeleteApi

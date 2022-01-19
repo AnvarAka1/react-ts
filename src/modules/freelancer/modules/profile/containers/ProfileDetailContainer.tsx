@@ -1,26 +1,27 @@
 import React from 'react'
 
 import { WorklanceLayout } from 'src/layouts'
-import { freelancerList } from 'src/mock/freelancer'
 import { FreelancerType } from 'src/types'
 
+import { useProfileDetail, useProfileGeneralUpdate, useProfileSecurityUpdate } from '../hooks'
 import ProfileDetail from '../components/ProfileDetail'
+import { PasswordUpdateType } from '../types'
 
 function ProfileDetailContainer () {
-  const detail = freelancerList[0]
+  const profileDetail = useProfileDetail()
+  const profileGeneralUpdate = useProfileGeneralUpdate()
+  const profileSecurityUpdate = useProfileSecurityUpdate()
 
-  const handleGeneralSubmit = (values: FreelancerType) => {
+  const handleGeneralSubmit = (values: FreelancerType) =>
+    profileGeneralUpdate.update(values)
 
-  }
-
-  const handleSecuritySubmit = (values: FreelancerType) => {
-
-  }
+  const handleSecuritySubmit = (values: PasswordUpdateType) =>
+    profileSecurityUpdate.update(values)
 
   return (
     <WorklanceLayout title="Профиль">
       <ProfileDetail
-        detail={detail}
+        detail={profileDetail.detail}
         onGeneralSubmit={handleGeneralSubmit}
         onSecuritySubmit={handleSecuritySubmit}
       />

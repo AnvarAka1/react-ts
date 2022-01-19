@@ -3,14 +3,17 @@ import Grid from '@mui/material/Grid'
 
 import PageContainer from 'src/components/PageContainer'
 import { FreelancerType } from 'src/types'
+import { ResponseDataType } from 'src/api/types'
 
 import ProfileGeneral from './ProfileGeneral'
 import ProfileSecurity from './ProfileSecurity'
 
+import { PasswordUpdateType } from '../../types'
+
 type Props = {
-  readonly detail: FreelancerType
-  readonly onGeneralSubmit: (values: FreelancerType) => void
-  readonly onSecuritySubmit: (values: FreelancerType) => void
+  readonly detail: FreelancerType | null
+  readonly onGeneralSubmit: (values: FreelancerType) => Promise<ResponseDataType<null>>
+  readonly onSecuritySubmit: (values: PasswordUpdateType) => Promise<ResponseDataType<null>>
 }
 
 function ProfileDetail ({ detail, onGeneralSubmit, onSecuritySubmit }: Props) {
